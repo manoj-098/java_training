@@ -1,7 +1,9 @@
-import java.io.*; import java.util.*;
-// Read only region start class UserMainCode
+import java.io.*;
+import java.util.*;
+// Read only region start 
+class UserMainCode
 {
-public int countPrimes InRange (int input1, int input2){
+public int countPrimesInRange (int input1, int input2){
 // Read only region end
 // Write code here...
 int count=0, flag=0;
