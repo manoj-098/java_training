@@ -4,7 +4,7 @@ import java.io.*; import java.util.*;
 public int countPrimes InRange (int input1, int input2){
 // Read only region end
 // Write code here...
-int count-e, flag=0;
+int count=0, flag=0;
 for(int i=input1;i<=input2;i++)
 flag=0;
 for (int j=2;j<i;j++)
