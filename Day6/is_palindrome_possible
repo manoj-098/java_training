@@ -4,7 +4,7 @@ import java.io.*;
 //Read only region start
 class UserMainCode
 {
-  public int isPalindrome(itn input1)
+  public int isPalindrome(int input1)
 {
 //Read only region end
 // Write code here...
