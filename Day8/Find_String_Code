@@ -1,0 +1,44 @@
+
+import java.util.*;
+import java.io.*;
+
+//Read only region start
+class UserMainCode
+{
+  public int stringCode(String input1[])
+{
+//Read only region end
+// Write code here...
+int sum=0,temp=0;
+        String fin="";
+        String str[]=input1.split(" ");
+        System.out.println("SIZE: "+str.length);
+        for(int i=0;i<str.length;i++)
+        {
+            sum=0;
+            for(int j=0;j<=str[i].length()/2;j++)
+            {
+                temp=0;
+               
+                if(((str[i].charAt(j))==(str[i].charAt(((str[i].length()-1)-j)))) && str[i].length()%2!=0)
+                {  
+                    
+                    temp=s.indexOf(String.valueOf(Character.toUpperCase(str[i].charAt(j))));
+                     // System.out.println((s.indexOf(String.valueOf(Character.toUpperCase(str[i].charAt(str[i].length()-j-1))))));
+                }
+                else
+                {
+                          temp=((s.indexOf(String.valueOf(Character.toUpperCase(str[i].charAt(j)))))-(s.indexOf(String.valueOf(Character.toUpperCase(str[i].charAt((str[i].length()-1)-j))))));
+                           // System.out.println((s.indexOf(String.valueOf(str[i].charAt(j)))));
+                           // System.out.println((s.indexOf(String.valueOf(Character.toUpperCase(str[i].charAt((str[i].length()-1)-j))))));
+                }
+                if(temp<0) sum+=((-1)*temp);
+                else sum+=temp;
+                 
+            }
+            System.out.println("SUM: "+ sum);
+            fin+=sum;
+        }
+        return Integer.parseInt(fin);
+    }
+}
