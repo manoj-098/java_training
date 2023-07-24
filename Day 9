@@ -1,0 +1,29 @@
+import java.io.*;
+import  java.util.*;   
+// Read only region start
+class UserMainCode
+{
+public class Result{
+public final int output1; public final int output2;
+public Result(int out1, int out2){
+output1 = outl;
+output2 = out2;
+}
+}
+public Result findOriginalFirstAndSum(int[] input1,int input2){
+
+
+//Write code here...
+
+        int sum[] = new int[input1.length];
+        int tot=input1[input1.length-1];
+        sum[input1.length-1]=input1[input1.length-1];
+        for(int i=input1.length-2;i>=0;i--)
+        {
+            sum[i]=input1[i]-sum[i+1];
+            tot+=sum[i];
+        }
+        Result obj;
+        return new Result(sum[0],tot);
+    }
+}
