@@ -1,2 +1,2 @@
-# java_training
+# java_trainings
 Java Training Program
