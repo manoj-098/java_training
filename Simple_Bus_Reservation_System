@@ -1,0 +1,83 @@
+//BUS TICKET RESERVATION SYSTEM
+
+import java.util.Scanner;
+
+class Main
+{
+	public static void main(String args[])
+	{
+		Scanner in = new Scanner(System.in);
+		int seats=30;
+		int i=1;
+		System.out.println("                          ----------------------------------------------------------------------------\n\t\t\t\t\t\t  WELCOME TO ABS BUS SERVICE  \n                          ----------------------------------------------------------------------------\n\n* SEATS AVAILABLE :  \n");
+		String ar1[]=new String[seats];
+		for(int j =1;j<=seats;j++)
+			ar1[j-1]=j+"";
+		while(i<=seats)
+		{
+			System.out.println("-------------------------------------------------");
+			for(int j=0;j<10;j++)
+			{
+				if(i<10)      		System.out.print("0"+i+" | ");
+				else		     	System.out.print(i+" | ");
+				i++;		
+			}
+			System.out.println();
+		}
+		int arr[]=new int[seats];
+		int num=0;
+		int res=1;
+		while(res==1) 
+			res=func(seats,arr,ar1,num++);
+	    System.out.println("\n\n----------------------------------------------THANK YOU FOR BOOKING-------------------------------------");
+	}
+public static int func(int seats,int[] arr,String[] ar1,int num)
+{
+	Scanner in = new Scanner(System.in);
+    int res=1;
+    System.out.print("\nEnte your name       :   ");
+    String name=in.nextLine();
+    System.out.print("Enter your age       :   ");
+    int age=in.nextInt();
+	System.out.print("Select the seat no   :   ");
+	int choice=in.nextInt();
+	int i1=0;
+	for(i1=0;i1<seats;i1++)
+	{
+		if(choice==arr[i1]) 
+			{res=0;
+			break;}
+	}
+	
+	if(res!=0 && choice<=seats && choice>0) 
+	{	
+		System.out.println("\n              ---------------------------------SEAT BOOKED SUCCESFULLY-------------------------------------------\n\t\t\t\t\t________________________________________________________\n\t\t\t\t\t\tNAME OF THE PASSENGER   : "+name+"\n\t\t\t\t\t\tAGE OF THE PASSENGER    : "+age+"\n\t\t\t\t\t\tSEAT NO                 : "+choice+"\n\t\t\t\t\t___________________________________________________________");
+		arr[num]=choice;
+		num++;
+	}
+	else if(choice<=seats && choice>0)	System.out.println("\n\t--------------------SEAT NOT AVAILABLE OR MIGHT HAVE BEEN ALREADY BOOKED-------------------------");
+	else                                System.out.println("\n\t--------------------INVALID SEAT NUMBER-------------------------- \n");
+	System.out.print("\nPress :\t1 to continue booking:\n\t0 to exit\n\nEnter your choice:  ");
+	int ch=in.nextInt();
+	if(ch==1)
+	{
+	int i=0;
+	System.out.println("\nSEATS AVAILABLE : ");
+	while(i<seats)
+	{
+		System.out.println("-------------------------------------------------");
+		for(int j=0;j<10;j++)
+		{
+			if(choice<=seats && choice>0)
+			{	if(choice>0 && choice<10)    ar1[choice-1]=" ";
+				else                         ar1[choice-1]="  ";  }
+			if(i<9)     System.out.print(ar1[i]+"  | ");
+			else        System.out.print(ar1[i]+" | ");
+			i++;		
+		}
+		System.out.println();
+	}
+	}
+	return ch;
+}
+}
